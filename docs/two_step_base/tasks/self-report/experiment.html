@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Self-report</title>
+
+  <!-- Load libraries -->
+  <script src="../../lib/jspsych-6.3.1/jspsych.js"></script>
+
+  <!-- Load jsPsych plug-ins -->
+  <script src="./jspsych-survey-demo.js"></script>
+  <script src="./jspsych-survey-debrief.js"></script>
+  <script src="./jspsych-survey-template.js"></script>
+  <script src="./jspsych-mental-health-alert.js"></script>
+
+  <!-- Load template surveys -->
+  <script src="./surveys/7u7d.js"></script>
+  <script src="./surveys/acqr.js"></script>
+  <script src="./surveys/aes.js"></script>
+  <script src="./surveys/asrs.js"></script>
+  <script src="./surveys/bis11.js"></script>
+  <script src="./surveys/bisbas.js"></script>
+  <script src="./surveys/ctq.js"></script>
+  <script src="./surveys/dass.js"></script>
+  <script src="./surveys/eat26.js"></script>
+  <script src="./surveys/gad7.js"></script>
+  <script src="./surveys/gse.js"></script>
+  <script src="./surveys/hitop.js"></script>
+  <script src="./surveys/idas.js"></script>
+  <script src="./surveys/ius12.js"></script>
+  <script src="./surveys/lsas.js"></script>
+  <script src="./surveys/nfc.js"></script>
+  <script src="./surveys/nfcs.js"></script>
+  <script src="./surveys/npoq.js"></script>
+  <script src="./surveys/oci.js"></script>
+  <script src="./surveys/panas.js"></script>
+  <script src="./surveys/phq9.js"></script>
+  <script src="./surveys/pswq.js"></script>
+  <script src="./surveys/rts.js"></script>
+  <script src="./surveys/sds.js"></script>
+  <script src="./surveys/shaps.js"></script>
+  <script src="./surveys/sns.js"></script>
+  <script src="./surveys/stai.js"></script>
+  <script src="./surveys/sticsa.js"></script>
+
+  <!-- Load special surveys -->
+  <script src="./special/jspsych-affective-slider.js"></script>
+  <script src="./special/jspsych-disorder-checklist.js"></script>
+  <script src="./special/jspsych-survey-audit.js"></script>
+  <script src="./special/jspsych-survey-dudit.js"></script>
+  <script src="./special/jspsych-survey-covid.js"></script>
+  <script src="./special/affective-slider.js"></script>
+
+  <!-- Load CSS styles -->
+  <link href="../../lib/jspsych-6.3.1/css/jspsych.css" rel="stylesheet" type="text/css"></link>
+
+</head>
+<body></body>
+<script>
+
+  // Display alert message on back/refresh.
+  // https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeunload
+  function verify_unload(e){
+    e.preventDefault();
+    (e || window.event).returnValue = null;
+    return null;
+  };
+  window.addEventListener("beforeunload", verify_unload);
+
+  //---------------------------------------//
+  // Define surveys.
+  //---------------------------------------//
+
+  // Define demographics form.
+  var DEMO = {
+    type: 'survey-demo'
+  }
+
+  // Define debriefing form.
+  var DEBRIEF = {
+    type: 'survey-debrief'
+  }
+
+  // Define mental health alert.
+  var MHA = {
+    type: 'mental-health-alert'
+  }
+
+  // Define disorder checklist.
+  var CHECKLIST = {
+    type: 'disorder-checklist'
+  }
+
+  // Define random survey.
+  var [SURVEY] = jsPsych.randomization.sampleWithoutReplacement([
+    seven_up_seven_down, acqr, aes, asrs, bis11, bisbas, dass, ctq, eat26, gad7, gse, hitop,
+    idas, ius12, lsas, nfc10, nfcs, npoq, oci, panas, phq9, pswq, rts, sds, shaps, sns,
+    stai, sticsa
+  ]);
+
+  // Define disorder checklist.
+  var checklist_page_01 = {
+    type: 'disorder-checklist'
+  }
+
+  var checklist_page_02 = {
+    timeline: [{
+      type: 'survey-template',
+      items: ['test'],
+      scale: ['Self', 'Professional', 'Both'],
+      instructions: "Of the mental health conditions you have been diagnosed with, who diagnosed you?",
+      scale_repeat: 10,
+      survey_width: 650,
+      item_width: 40,
+      on_start: function(trial) {
+        const [data] = jsPsych.data.get().last(1).values();
+        trial.items = data.diagnoses;
+        trial.reverse = data.diagnoses.map(x => false);
+      }
+    }],
+    conditional_function: function() {
+      const [data] = jsPsych.data.get().last(1).values();
+      if (data.diagnoses.length > 0) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }
+
+  var CHECKLIST = {
+    timeline: [checklist_page_01, checklist_page_02]
+  }
+
+  //---------------------------------------//
+  // Define timeline.
+  //---------------------------------------//
+
+  // Query URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const show_plugin = urlParams.get('plugin');
+
+  // Initialize timeline.
+  var timeline = [];
+  if (show_plugin == "demo") {
+    timeline = timeline.concat(DEMO);
+  } else if (show_plugin == "debrief") {
+    timeline = timeline.concat(DEBRIEF);
+  } else if (show_plugin == "survey") {
+    timeline = timeline.concat(SURVEY);
+  } else if (show_plugin == "mha") {
+    timeline = timeline.concat(MHA);
+  } else if (show_plugin == "checklist") {
+    timeline = timeline.concat(CHECKLIST)
+  } else {
+    timeline = timeline.concat(SURVEY);
+  }
+
+  jsPsych.init({
+    timeline: timeline,
+    show_progress_bar: true,
+    on_finish: function() {
+
+      // Remove requirement to verify redirect
+      window.removeEventListener("beforeunload", verify_unload);
+
+      // Add interactions to the data variable
+      var interaction_data = jsPsych.data.getInteractionData();
+      jsPsych.data.get().addToLast({interactions: interaction_data.json()});
+
+      // Display jsPsych data in viewport.
+      jsPsych.data.displayData();
+
+    }
+  })
+
+</script>
+</html>
