@@ -3,6 +3,7 @@ layout: default
 ---
 
 # Tasks / Plugins
+
 {:.no_toc}
 
 TABLE OF CONTENTS
@@ -54,7 +55,7 @@ TABLE OF CONTENTS
 
 [<b>[Code]</b>](https://github.com/nivlab/jspsych-demos/tree/main/tasks/pgng) [<b>[Demo]</b>](./tasks/pgng/experiment.html)
 
-> A robot-themed version of the Pavlovian go/no-go task implemented using Javascript and CSS. 
+> A robot-themed version of the Pavlovian go/no-go task implemented using Javascript and CSS.
 
 ### Relative value learning task
 
@@ -73,7 +74,6 @@ TABLE OF CONTENTS
 [<b>[Code]</b>](https://github.com/nivlab/jspsych-demos/tree/main/tasks/two-step) [<b>[Demo]</b>](./tasks/two-step/experiment.html)
 
 > A space-themed version of the two-step task. Inspired by [Decker et al. (2016)](https://doi.org/10.1177%2F0956797616639301); adapted from [Nussenbaum et al. (2020)](https://doi.org/10.1525/collabra.17213).
-
 
 <hr>
 
