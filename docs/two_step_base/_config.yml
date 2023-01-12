@@ -26,7 +26,7 @@ baseurl: "/jspsych-demos" # the subpath of your site, e.g. /blog
 url: "https://nivlab.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 # aesthetics
-logo: /assets/img/logo.png
+#logo: /assets/img/logo.png
 
 # Build settings
 theme: jekyll-theme-minimal
