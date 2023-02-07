@@ -183,7 +183,7 @@ var READY_01 = {
   pages: [
     "<p>Great job! You've finished the instructions.</p><p>We'll get started with the real game now.</p>",
     "<p>In the real game, you will see new planets, aliens, and rocket ships.</p><p>However, the rules of the game <b>have not changed</b>.</p>",
-    "Get ready to begin <b>Block 1/2</b>. It will take ~8 minutes.<br>Press next when you're ready to start.",
+    "Get ready to begin <b>Block 1/10</b>. It will take ~8 minutes.<br>Press next when you're ready to start.",
   ]
 }
 
@@ -191,10 +191,73 @@ var READY_02 = {
   type: 'two-step-instructions',
   pages: [
     "Take a break for a few moments and press any button when you are ready to continue.",
-    "Get ready to begin <b>Block 2/2</b>. It will take ~8 minutes.<br>Press next when you're ready to start.",
+    "Get ready to begin <b>Block 2/10</b>. It will take ~8 minutes.<br>Press next when you're ready to start.",
   ]
 }
 
+var READY_03 = {
+  type: 'two-step-instructions',
+  pages: [
+    "Take a break for a few moments and press any button when you are ready to continue.",
+    "Get ready to begin <b>Block 3/10</b>. It will take ~8 minutes.<br>Press next when you're ready to start.",
+  ]
+}
+
+var READY_04 = {
+  type: 'two-step-instructions',
+  pages: [
+    "Take a break for a few moments and press any button when you are ready to continue.",
+    "Get ready to begin <b>Block 4/10</b>. It will take ~8 minutes.<br>Press next when you're ready to start.",
+  ]
+}
+
+var READY_05 = {
+  type: 'two-step-instructions',
+  pages: [
+    "Take a break for a few moments and press any button when you are ready to continue.",
+    "Get ready to begin <b>Block 5/10</b>. It will take ~8 minutes.<br>Press next when you're ready to start.",
+  ]
+}
+
+var READY_06 = {
+  type: 'two-step-instructions',
+  pages: [
+    "Take a break for a few moments and press any button when you are ready to continue.",
+    "Get ready to begin <b>Block 6/10</b>. It will take ~8 minutes.<br>Press next when you're ready to start.",
+  ]
+}
+
+var READY_07 = {
+  type: 'two-step-instructions',
+  pages: [
+    "Take a break for a few moments and press any button when you are ready to continue.",
+    "Get ready to begin <b>Block 7/10</b>. It will take ~8 minutes.<br>Press next when you're ready to start.",
+  ]
+}
+
+var READY_08 = {
+  type: 'two-step-instructions',
+  pages: [
+    "Take a break for a few moments and press any button when you are ready to continue.",
+    "Get ready to begin <b>Block 8/10</b>. It will take ~8 minutes.<br>Press next when you're ready to start.",
+  ]
+}
+
+var READY_09 = {
+  type: 'two-step-instructions',
+  pages: [
+    "Take a break for a few moments and press any button when you are ready to continue.",
+    "Get ready to begin <b>Block 9/10</b>. It will take ~8 minutes.<br>Press next when you're ready to start.",
+  ]
+}
+
+var READY_10 = {
+  type: 'two-step-instructions',
+  pages: [
+    "Take a break for a few moments and press any button when you are ready to continue.",
+    "Get ready to begin <b>Block 10/10</b>. It will take ~8 minutes.<br>Press next when you're ready to start.",
+  ]
+}
 //---------------------------------------//
 // Define end of experiment screens.
 //---------------------------------------//
@@ -211,8 +274,8 @@ const instructions_04 = {
 const quiz_04 = {
   type: 'two-step-comprehension',
   prompts: [
-    `Which rocket ship went mostly to the <b><font color='${task_info.font_colors[0]}'>${task_info.planet_names[0]}</font></b> planet?`,
-    `Which rocket ship went mostly to the <b><font color='${task_info.font_colors[1]}'>${task_info.planet_names[1]}</font></b> planet?`,
+    `Which rocket ship went mostly to the <b><font color='${task_info.font_colors[0]}'>${task_info.planet_names[0]}</font></b> planet in this last block?`,
+    `Which rocket ship went mostly to the <b><font color='${task_info.font_colors[1]}'>${task_info.planet_names[1]}</font></b> planet in this last block?`,
   ],
   options: [
     task_info.rocket_names,

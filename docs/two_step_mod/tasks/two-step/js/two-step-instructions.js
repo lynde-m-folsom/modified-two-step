@@ -331,8 +331,9 @@ var instructions_loop_2a = {
 const instructions_2b = {
   type: 'two-step-instructions',
   pages: [
-    "<p>Now, let's practice 10 turns of the whole game.</p><p>On the next screen, use the <b>left/right arrow keys</b> on your keyboard to choose a rocket ship. Then, when you arrive at a planet, use the left/right arrow keys again to pick an alien.</p>",
-    "<p><b>Remember:</b> a rocket ship will fly mostly to one planet,</p><p>but sometimes it'll take you to the other planet!</p>",
+    "<p>Now, let's practice 10 turns. We hope to collect data on which ship is most likely to land on each planet so we will ask you to give us an estimate as you travel. It's okay to be uncertain! We will ask you how sure of your estimate you are as well.</p>",
+    "<p>On the next screen, use the <b>left/right arrow keys</b> on your keyboard to choose a rocket ship. Then, when you arrive at a planet, use the left/right arrow keys again to pick an alien.</p>",
+    "<p><b>Remember:</b> a rocket ship will fly <b> mostly </b> to one planet, but sometimes it'll take you to the other planet! </p><p>This is why we ask about how likely you think it is that your selected ship will bring you to each planet.</p>",
     "<p><b>Hint:</b> The rockets will sometimes switch the side of the screen<br>they are on. The side a rocket appears on does not change<br>how likely it is to go to a planet.</p>"
   ],
   add_aliens: [false, false, false],
