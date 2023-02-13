@@ -96,7 +96,7 @@
       jsPsych.data.get().addToLast({interactions: interaction_data.json()});
 
       // Display jsPsych data in viewport.
-      proliferate.submit(jsPsych.data)
+      proliferate.submit({data: jsPsych.data.get().values()});
       jsPsych.data.displayData();
 
     }
