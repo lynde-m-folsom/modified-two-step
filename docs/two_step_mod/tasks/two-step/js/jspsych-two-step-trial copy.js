@@ -345,7 +345,8 @@ jsPsych.plugins["two-step-trial"] = (function() {
       max = Math.floor(max);
       return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
     }
-
+    
+    //Vars for collecting the certainty and likelihood original from Ross 
     var collect_ratings = function() {
       var plugin_id_name = "lmfplugin-html-slider-response.js";
       var plugin_id_selector = '#' + plugin_id_name;
@@ -358,7 +359,6 @@ jsPsych.plugins["two-step-trial"] = (function() {
       var lValue = 50;
 
       var html = '';// form element
-
       var trial_form_id = _join(plugin_id_name, "form");
       display_element.innerHTML += '<form id="'+trial_form_id+'"></form>';
   
@@ -416,7 +416,6 @@ jsPsych.plugins["two-step-trial"] = (function() {
         display_element.querySelector('.comprehension-box').remove();
       });
     }
-
 
     // Intermediate function to update screen objects from state 1 to state 2.
     var state_transition = function() {
@@ -554,9 +553,6 @@ jsPsych.plugins["two-step-trial"] = (function() {
       collect_alien_ratings()
 
     }
-
-
-
 
     // };
 
