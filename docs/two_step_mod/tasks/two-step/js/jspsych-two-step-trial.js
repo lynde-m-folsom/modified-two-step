@@ -396,7 +396,7 @@ jsPsych.plugins["two-step-trial"] = (function() {
         // insert data into trial data
         response.state_1_reported_transition_rating = document.getElementById('likelihood').value;
         //document.querySelector('.landscape-sky').innerHTML = "";
-        setTimeout(function() { collect_ratings2(); }, 800);
+        setTimeout(function() { collect_ratings2(); }, 250);
         display_element.querySelector('.comprehension-box').remove();
       });
     }
@@ -563,7 +563,7 @@ jsPsych.plugins["two-step-trial"] = (function() {
         // document.querySelector('.landscape-sky').innerHTML = "";
         // Present feedback.
         //state_2_feedback(response.state_2_key, response.outcome)
-        setTimeout(function() { collect_alien_ratings2(); }, trial.feedback_duration);
+        setTimeout(function() { collect_alien_ratings2(); }, 250);
         display_element.querySelector('.alien-comp-box').remove();
         
       });
