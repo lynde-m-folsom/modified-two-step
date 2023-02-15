@@ -674,12 +674,18 @@ jsPsych.plugins["two-step-trial"] = (function() {
         state_1_key: response.state_1_key,
         state_1_choice: response.state_1_choice,
         state_1_rt: response.state_1_rt,
+        state_1_reported_transition_rating: response.state_1_reported_transition_rating,
+        state_1_certainty: response.state_1_certainty,
+
         transition: trial.transition,
         state: response.state_2,
         state_2_ids: state_2_ids,
         state_2_key: response.state_2_key,
         state_2_choice: response.state_2_choice,
         state_2_rt: response.state_2_rt,
+        state_2_reported_transition_rating: response.state_2_reported_transition_rating,
+        state_2_certainty: response.state_2_certainty,
+        
         outcome: response.outcome,
         rocket_colors: trial.rocket_colors,
         planet_colors: trial.planet_colors,
