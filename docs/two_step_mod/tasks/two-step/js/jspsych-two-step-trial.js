@@ -367,7 +367,7 @@ jsPsych.plugins["two-step-trial"] = (function() {
       //const planet_font_color = task_info.font_colors[planet_color_name];
       
       //question 1 stage 1 "likelihood""
-      html += `<div class="jspsych-survey-multi-choice-preamble"> How likely is it you will transition to the <span style="color:${planet_color_name};">${planet_color_name}</span> planet?</div>`;
+      html += `<div class="jspsych-survey-multi-choice-preamble">How likely is it that this ship will take you to the <span style="color:${planet_color_name};">${planet_color_name}</span> planet?</div>`;
       html += `<input type="range" id="likelihood" name="likelihood" form="${trial_form_id}">`;
       html += `<label for="likelihood"> <span id="lValue">${lValue}</span>% likely</label>`;
       html += `<input type="submit" id="${plugin_id_name}-next" class="${plugin_id_name} jspsych-btn" form="${trial_form_id}" disabled=true></input>`;

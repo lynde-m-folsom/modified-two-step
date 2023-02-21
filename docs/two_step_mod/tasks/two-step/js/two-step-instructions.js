@@ -331,10 +331,10 @@ var instructions_loop_2a = {
 const instructions_2b = {
   type: 'two-step-instructions',
   pages: [
-    "<p>Now, let's practice 10 turns. We hope to collect data on which ship is most likely to land on each planet so we will ask you to give us an estimate as you travel. It's okay to be uncertain! We will ask you how sure of your estimate you are as well.</p>",
-    "<p>On the next screen, use the <b>left/right arrow keys</b> on your keyboard to choose a rocket ship. Then, when you arrive at a planet, use the left/right arrow keys again to pick an alien.</p>",
-    "<p><b>Remember:</b> a rocket ship will fly <b> mostly </b> to one planet, but sometimes it'll take you to the other planet! </p><p>This is why we ask about how likely you think it is that your selected ship will bring you to each planet.</p>",
-    "<p><b>Hint:</b> The rockets will sometimes switch the side of the screen<br>they are on. The side a rocket appears on does not change<br>how likely it is to go to a planet.</p>"
+    "<p>Now, let's practice 10 turns.We also want to know how you feel about the choices you make as you travel. So, after you pick a ship, we will ask how likely you feel it is that the ship you chose will take you to one planet versus the other.</p>",
+    "<p>On the next screen, use the <b>left/right arrow keys</b> on your keyboard to choose a rocket ship. Then, when you arrive at a planet, use the left/right arrow keys again to pick an alien.After you pick an alien, we will ask how likely you feel it is that the alien you chose will give you treasure.</p>",
+    "<p><b>Remember:</b> a rocket ship will fly <b> mostly </b> to one planet, but sometimes it'll take you to the other planet! </p>",
+    "<p><b>Please Note:</b> Sometimes a red rocket will appear on the left side and a blue one on the right side <br> sometimes it will be the other way around. The side a rocket appears on does not change how likely it is to go to one planet versus the other.”  </p>"
   ],
   add_aliens: [false, false, false],
   add_rockets: [true, true, true],
@@ -415,9 +415,9 @@ const instructions_3a = {
     "<p>At the end of the game, the total amount of treasure you've collected</p><p>will be converted into a <b>performance bonus</b>.</p>",
     "<p>Your goal is to try and collect as much treasure as you can!</p>",
     "To help you collect as much treasure as possible, here are <b>3 hints.</b></p><p>Please read each hint carefully.</p>",
-    "<p><b>Hint #1:</b> How likely an alien is to give you treasure will change over time, but this change will be slow. So you should remember which aliens are giving you treasure as an alien giving you treasure now is likely to continue giving you treasure for a while.</p>",
-    "<p><b>Hint #2:</b> Whether you get treasure depends only on the alien you choose to trade with, <u>not</u> on what rocket ship brought you to that alien, the order in which you choose aliens, or the aliens you choose to not trade with.</p>",
-    "<p><b>Hint #3:</b> If there is an alien you want to trade with, remember to pick<br>the rocket ship that is most likely to take you to that alien’s planet."
+    "<p><b>Hint #1:</b>The chance of a specific alien giving you treasure will change over time, but this change will be slow. So, you should remember which aliens are giving you treasure: an alien giving you treasure now will probably continue giving you treasure for a while.</p>",
+    "<p><b>Hint #2:</b>Whether you get treasure depends <u>only</u> on the alien you choose to trade with, not on what rocket ship brought you to that alien. alien, the order in which you choose aliens, or the aliens you choose to not trade with.</p>",
+    "<p><b>Hint #3:</b>If there is an alien you want to trade with, remember to pick the rocket ship that you think has the best chance of taking you to that alien’s planet."
 
   ],
   add_aliens: [false, false, false, false, false, false, false],
@@ -444,8 +444,10 @@ const quiz_3 = {
     "<i>True</i> or <i>False</i>:&nbsp;&nbsp;How likely an alien is to give you treasure changes slowly over time.",
     "<i>True</i> or <i>False</i>:&nbsp;&nbsp;How likely an alien is to give you treasure depends on the rocket ship you choose.",
     "<i>True</i> or <i>False</i>:&nbsp;&nbsp;The treasure you earn will affect your performance bonus.",
+    "<i>True</i> or <i>False</i>:&nbsp;&nbsp;The alien color matches the color of the planet.",
   ],
   options: [
+    ["True", "False"],
     ["True", "False"],
     ["True", "False"],
     ["True", "False"],
@@ -453,7 +455,8 @@ const quiz_3 = {
   correct: [
     "True",
     "False",
-    "True"
+    "True",
+    "False"
   ],
   data: {quiz: 3}
 }

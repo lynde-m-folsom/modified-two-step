@@ -25,6 +25,9 @@
   <script src="../../lib/jspsych-6.3.1/plugins/jspsych-call-function.js"></script>
   <script src="../../lib/jspsych-6.3.1/plugins/jspsych-html-keyboard-response.js"></script>
 
+<!-- Integration for proliferate lmf -->
+<script src='https://proliferate.alps.science/static/js/proliferate.js'></script>
+
   <!-- Load CSS styles -->
   <link href="../../lib/jspsych-6.3.1/css/jspsych.css" rel="stylesheet" type="text/css"></link>
   <link href="./css/two-step-css.min.css" rel="stylesheet" type="text/css"></link>
@@ -91,7 +94,8 @@
       var interaction_data = jsPsych.data.getInteractionData();
       jsPsych.data.get().addToLast({interactions: interaction_data.json()});
 
-      // Display jsPsych data in viewport.
+      // Display jsPsych data in viewport. & submit 
+      proliferate.submit({data: jsPsych.data.get().values()});
       jsPsych.data.displayData();
 
     }
