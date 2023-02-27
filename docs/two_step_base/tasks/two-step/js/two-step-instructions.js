@@ -536,7 +536,7 @@ const readconsent = {
 const signconsent = {
   type: 'survey-html-form',
   preamble: '<p>By entering your prolific ID below you are affirming that you have read the consent form and consent to participating in this study:</p>',
-  html: '<p>Your ID # <input type="text" id="prolific-id" name="response" size="10" /></p>',
+  html: '<p>Your ID # <input type="text" id="prolific-id" name="prolific-id" size="10" /></p>',
 }
 var CONSENT = {
   timeline: [
