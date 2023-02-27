@@ -4,7 +4,7 @@
 *
 * Plug-in to run two-step task trial
 
-** this task is modified to ask participants for transition probabilities. Lynde Folsom, Ross Blair 2022
+** this task is modified to ask participants for transition probabilities. Lynde Folsom, Ross Blair 2022-23
 **/
 
 jsPsych.plugins["two-step-trial"] = (function() {
