@@ -76,7 +76,7 @@ jsPsych.plugins["two-step-consent"] = (function() {
       left: 50%;
       -webkit-transform: translate(-50%, -50%);
       transform: translate(-50%, 0%);
-      width: 800px;
+      width: 1000px;
       height: 600px;
       background: white;
       border: 2px solid white;
